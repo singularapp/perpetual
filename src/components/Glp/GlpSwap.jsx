@@ -86,6 +86,8 @@ import StatsTooltipRow from "../StatsTooltip/StatsTooltipRow";
 import "./GlpSwap.css";
 import SwapErrorModal from "./SwapErrorModal";
 
+import SLP_ICON from "img/logo_SINGULAR_small.png";
+
 const { ZeroAddress } = ethers;
 
 function getNextWednesdayUTC() {
@@ -166,9 +168,9 @@ export default function GlpSwap(props) {
   const history = useHistory();
   const searchParams = useSearchParams();
   const isMetamaskMobile = useIsMetamaskMobile();
-  const swapLabel = isBuying ? "BuyGlp" : "SellGlp";
-  const tabLabel = isBuying ? t`Buy GLP` : t`Sell GLP`;
-  const tabOptions = useMemo(() => [t`Buy GLP`, t`Sell GLP`], []);
+  const swapLabel = isBuying ? "BuySlp" : "SellSlp";
+  const tabLabel = isBuying ? t`Buy SLP` : t`Sell SLP`;
+  const tabOptions = useMemo(() => [t`Buy SLP`, t`Sell SLP`], []);
 
   const { active, signer, account } = useWallet();
   const { openConnectModal } = useConnectModal();
@@ -205,7 +207,6 @@ export default function GlpSwap(props) {
   const glpRewardRouterAddress = getContract(chainId, "GlpRewardRouter");
 
   const tokensForBalanceAndSupplyQuery = [stakedGlpTrackerAddress, usdgAddress];
-  const glpIcon = getIcon(chainId, "glp");
 
   const isFeesHigh = feeBasisPoints > FEES_HIGH_BPS;
 
@@ -581,8 +582,8 @@ export default function GlpSwap(props) {
 
   const getError = () => {
     if (IS_NETWORK_DISABLED[chainId]) {
-      if (isBuying) return [t`GLP buy disabled, pending ${getChainName(chainId)} upgrade`];
-      return [t`GLP sell disabled, pending ${getChainName(chainId)} upgrade`];
+      if (isBuying) return [t`SLP buy disabled, pending ${getChainName(chainId)} upgrade`];
+      return [t`SLP sell disabled, pending ${getChainName(chainId)} upgrade`];
     }
 
     if (
@@ -633,7 +634,7 @@ export default function GlpSwap(props) {
 
     if (!isBuying) {
       if (maxSellAmount !== undefined && glpAmount !== undefined && glpAmount > maxSellAmount) {
-        return [t`Insufficient GLP balance`];
+        return [t`Insufficient SLP balance`];
       }
 
       const swapTokenInfo = getTokenInfo(infoTokens, swapTokenAddress);
@@ -714,7 +715,7 @@ export default function GlpSwap(props) {
       return isBuying ? t`Buying...` : t`Selling...`;
     }
 
-    return isBuying ? t`Buy GLP` : t`Sell GLP`;
+    return isBuying ? t`Buy SLP` : t`Sell SLP`;
   };
 
   const approveFromToken = () => {
@@ -750,7 +751,7 @@ export default function GlpSwap(props) {
       value,
       sentMsg: t`Buy submitted.`,
       failMsg: t`Buy failed.`,
-      successMsg: t`${formatAmount(glpAmount, 18, 4, true)} GLP bought with ${formatAmount(
+      successMsg: t`${formatAmount(glpAmount, 18, 4, true)} SLP bought with ${formatAmount(
         swapAmount,
         swapTokenInfo.decimals,
         4,
@@ -779,7 +780,7 @@ export default function GlpSwap(props) {
     callContract(chainId, contract, method, params, {
       sentMsg: t`Sell submitted!`,
       failMsg: t`Sell failed.`,
-      successMsg: t`${formatAmount(glpAmount, 18, 4, true)} GLP sold for ${formatAmount(
+      successMsg: t`${formatAmount(glpAmount, 18, 4, true)} SLP sold for ${formatAmount(
         swapAmount,
         swapTokenInfo.decimals,
         4,
@@ -851,7 +852,7 @@ export default function GlpSwap(props) {
   const nativeTokenSymbol = getNativeToken(chainId).symbol;
 
   const onSwapOptionChange = (opt) => {
-    if (opt === t`Sell GLP`) {
+    if (opt === t`Sell SLP`) {
       switchSwapOption("redeem");
     } else {
       switchSwapOption();
@@ -903,7 +904,7 @@ export default function GlpSwap(props) {
         <div className="text-white">
           <Trans>
             Buy GM tokens before the epoch resets in {getTimeLeftToNextWednesday()} to be eligible for the Bonus Rebate.
-            Alternatively, wait for the epoch to reset to redeem GLP and buy GM within the same epoch.
+            Alternatively, wait for the epoch to reset to redeem SLP and buy GM within the same epoch.
           </Trans>
         </div>
         <br />
@@ -942,11 +943,11 @@ export default function GlpSwap(props) {
           <div className="App-card-title">
             <div className="App-card-title-mark">
               <div className="App-card-title-mark-icon">
-                <img width="40" src={glpIcon} alt="GLP" />
+                <img width="40" src={SLP_ICON} alt="SLP" />
               </div>
               <div className="App-card-title-mark-info">
-                <div className="App-card-title-mark-title">GLP</div>
-                <div className="App-card-title-mark-subtitle">GLP</div>
+                <div className="App-card-title-mark-title">SLP</div>
+                <div className="App-card-title-mark-subtitle">SLP</div>
               </div>
               <div>
                 <AssetDropdown assetSymbol="GLP" />
@@ -966,7 +967,7 @@ export default function GlpSwap(props) {
                 <Trans>Wallet</Trans>
               </div>
               <div className="value">
-                {formatAmount(glpBalance, GLP_DECIMALS, 4, true)} GLP ($
+                {formatAmount(glpBalance, GLP_DECIMALS, 4, true)} SLP ($
                 {formatAmount(glpBalanceUsd, USD_DECIMALS, 2, true)})
               </div>
             </div>
@@ -975,7 +976,7 @@ export default function GlpSwap(props) {
                 <Trans>Staked</Trans>
               </div>
               <div className="value">
-                {formatAmount(glpBalance, GLP_DECIMALS, 4, true)} GLP ($
+                {formatAmount(glpBalance, GLP_DECIMALS, 4, true)} SLP ($
                 {formatAmount(glpBalanceUsd, USD_DECIMALS, 2, true)})
               </div>
             </div>
@@ -989,7 +990,7 @@ export default function GlpSwap(props) {
                 </div>
                 <div className="value">
                   <Tooltip
-                    handle={`${formatAmount(reservedAmount, 18, 4, true)} GLP ($${formatAmount(
+                    handle={`${formatAmount(reservedAmount, 18, 4, true)} SLP ($${formatAmount(
                       reserveAmountUsd,
                       USD_DECIMALS,
                       2,
@@ -997,7 +998,7 @@ export default function GlpSwap(props) {
                     )})`}
                     position="bottom-end"
                     renderContent={() =>
-                      t`${formatAmount(reservedAmount, 18, 4, true)} GLP have been reserved for vesting.`
+                      t`${formatAmount(reservedAmount, 18, 4, true)} SLP have been reserved for vesting.`
                     }
                   />
                 </div>
@@ -1036,7 +1037,7 @@ export default function GlpSwap(props) {
               </div>
               <div className="value">
                 <Trans>
-                  {formatAmount(glpSupply, GLP_DECIMALS, 4, true)} GLP ($
+                  {formatAmount(glpSupply, GLP_DECIMALS, 4, true)} SLP ($
                   {formatAmount(glpSupplyUsd, USD_DECIMALS, 2, true)})
                 </Trans>
               </div>
@@ -1098,8 +1099,8 @@ export default function GlpSwap(props) {
                 topLeftValue={payBalance}
               >
                 <div className="selected-token inline-flex items-center">
-                  <img className="mr-5" width={20} src={glpIcon} alt="GLP" />
-                  GLP
+                  <img className="mr-5" width={20} src={SLP_ICON} alt="SLP" />
+                  SLP
                 </div>
               </BuyInputSection>
             )}
@@ -1125,12 +1126,12 @@ export default function GlpSwap(props) {
                 topRightValue={`${formatAmount(glpBalance, GLP_DECIMALS, 4, true)}`}
                 inputValue={glpValue}
                 onInputValueChange={onGlpValueChange}
-                defaultTokenName="GLP"
+                defaultTokenName="SLP"
                 preventFocusOnLabelClick="right"
               >
                 <div className="selected-token inline-flex items-center">
-                  <img className="mr-5" width={20} src={glpIcon} alt="GLP" />
-                  GLP
+                  <img className="mr-5" width={20} src={SLP_ICON} alt="SLP" />
+                  SLP
                 </div>
               </BuyInputSection>
             )}
@@ -1233,16 +1234,16 @@ export default function GlpSwap(props) {
             {isBuying && (
               <div className="Page-description">
                 <Trans>
-                  Fees may vary depending on which asset you use to buy GLP. <br />
-                  Enter the amount of GLP you want to purchase in the order form, then check here to compare fees.
+                  Fees may vary depending on which asset you use to buy SLP. <br />
+                  Enter the amount of SLP you want to purchase in the order form, then check here to compare fees.
                 </Trans>
               </div>
             )}
             {!isBuying && (
               <div className="Page-description">
                 <Trans>
-                  Fees may vary depending on which asset you sell GLP for. <br />
-                  Enter the amount of GLP you want to redeem in the order form, then check here to compare fees.
+                  Fees may vary depending on which asset you sell SLP for. <br />
+                  Enter the amount of SLP you want to redeem in the order form, then check here to compare fees.
                 </Trans>
               </div>
             )}
@@ -1269,7 +1270,7 @@ export default function GlpSwap(props) {
                     position="bottom-end"
                     renderContent={() => (
                       <p className="text-white">
-                        <Trans>Available amount to deposit into GLP.</Trans>
+                        <Trans>Available amount to deposit into SLP.</Trans>
                       </p>
                     )}
                   />
@@ -1283,7 +1284,7 @@ export default function GlpSwap(props) {
                       return (
                         <p className="text-white">
                           <Trans>
-                            Available amount to withdraw from GLP. Funds not utilized by current open positions.
+                            Available amount to withdraw from SLP. Funds not utilized by current open positions.
                           </Trans>
                         </p>
                       );
@@ -1380,7 +1381,7 @@ export default function GlpSwap(props) {
                               Max pool capacity reached for {tokenInfo.symbol}
                               <br />
                               <br />
-                              Please mint GLP using another token
+                              Please mint SLP using another token
                             </Trans>
                             <br />
                             <p>
@@ -1533,7 +1534,7 @@ export default function GlpSwap(props) {
                       position="bottom-end"
                       renderContent={() => (
                         <Trans>
-                          Max pool capacity reached for {tokenInfo.symbol}. Please mint GLP using another token
+                          Max pool capacity reached for {tokenInfo.symbol}. Please mint SLP using another token
                         </Trans>
                       )}
                     />
@@ -1572,7 +1573,7 @@ export default function GlpSwap(props) {
                         className="label"
                         renderContent={() => (
                           <p className="text-white">
-                            <Trans>Available amount to deposit into GLP.</Trans>
+                            <Trans>Available amount to deposit into SLP.</Trans>
                           </p>
                         )}
                       />
@@ -1596,7 +1597,7 @@ export default function GlpSwap(props) {
                             return (
                               <p className="text-white">
                                 <Trans>
-                                  Available amount to withdraw from GLP. Funds not utilized by current open positions.
+                                  Available amount to withdraw from SLP. Funds not utilized by current open positions.
                                 </Trans>
                               </p>
                             );
