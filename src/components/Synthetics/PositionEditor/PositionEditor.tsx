@@ -390,6 +390,7 @@ export function PositionEditor(p: Props) {
           setPendingTxns,
           setPendingOrder,
           setPendingPosition,
+          singularFeeAmount: 0n,
         },
       });
     } else {

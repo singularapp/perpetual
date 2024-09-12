@@ -131,6 +131,7 @@ export function useTradeboxTransactions({ setPendingTxns }: TradeboxTransactions
         setPendingTxns,
         setPendingOrder,
         metricId: metricData.metricId,
+        singularFeeAmount: swapAmounts.singularFeeAmount
       })
         .then(makeTxnSentMetricsHandler(metricData.metricId))
         .catch(makeTxnErrorMetricsHandler(metricData.metricId));
@@ -229,6 +230,7 @@ export function useTradeboxTransactions({ setPendingTxns }: TradeboxTransactions
           setPendingTxns: setPendingTxns,
           setPendingOrder,
           setPendingPosition,
+          singularFeeAmount: increaseAmounts.singularFeeAmount
         },
         createDecreaseOrderParams: createSltpEntries.map((entry) => {
           return {
