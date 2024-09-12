@@ -1048,7 +1048,7 @@ export const TOKEN_COLOR_MAP = {
   BNB: "#efb90b",
   ATOM: "#6f7390",
   XRP: "#23292f",
-  LTC: "#16182e",
+  LTC: "#0F1218",
   OP: "#ff0421",
   DOT: "#e6007a",
   TBTC: "#000000",
