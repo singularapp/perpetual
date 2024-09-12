@@ -49,6 +49,7 @@ import { TradeHistory } from "components/Synthetics/TradeHistory/TradeHistory";
 import Tab from "components/Tab/Tab";
 import { useInterviewNotification } from "domain/synthetics/userFeedback/useInterviewNotification";
 import { useMedia } from "react-use";
+import { PerpectualGuide } from "components/Guide/PerpectualGuide";
 
 export type Props = {
   openSettings: () => void;
@@ -236,6 +237,7 @@ export function SyntheticsPage(p: Props) {
          `}
         </style>
       </Helmet>
+      {/* <PerpectualGuide /> */}
       <div className="Exchange-content">
         <div className="Exchange-left">
           <TVChart />
