@@ -67,6 +67,7 @@ import { useTradePageVersion } from "lib/useTradePageVersion";
 import useWallet from "lib/wallets/useWallet";
 import groupBy from "lodash/groupBy";
 import AssetDropdown from "./AssetDropdown";
+import { DOCUMENT_LINKS } from "config/links";
 
 const ACTIVE_CHAIN_IDS = [ARBITRUM, AVALANCHE];
 
@@ -402,7 +403,7 @@ export default function DashboardV2() {
               )}
               <br />
               <div>
-                <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v1">
+                <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>
                   <Trans>Read more</Trans>
                 </ExternalLink>
                 .
