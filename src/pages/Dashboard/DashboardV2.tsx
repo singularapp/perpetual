@@ -377,7 +377,7 @@ export default function DashboardV2() {
                     <br />
                     Get lower fees to{" "}
                     <Link to="/buy_glp" target="_blank" rel="noopener noreferrer">
-                      buy GLP
+                      buy SLP
                     </Link>{" "}
                     with {tokenInfo.symbol}, and to{" "}
                     <Link to="/trade" target="_blank" rel="noopener noreferrer">
@@ -612,14 +612,14 @@ export default function DashboardV2() {
                       handle={`$${formatAmount(tvl, USD_DECIMALS, 0, true)}`}
                       position="bottom-end"
                       renderContent={() => (
-                        <span>{t`Assets Under Management: GMX staked (All chains) + GLP pool (${chainName}) +  GM Pools (${chainName}).`}</span>
+                        <span>{t`Assets Under Management: SD staked (All chains) + SLP pool (${chainName}) +  SD Pools (${chainName}).`}</span>
                       )}
                     />
                   </div>
                 </div>
                 <div className="App-card-row">
                   <div className="label">
-                    <Trans>GLP Pool</Trans>
+                    <Trans>SLP Pool</Trans>
                   </div>
                   <div>
                     <TooltipComponent
@@ -627,7 +627,7 @@ export default function DashboardV2() {
                       position="bottom-end"
                       renderContent={() => (
                         <Trans>
-                          <p>Total value of tokens in GLP pool ({chainName}).</p>
+                          <p>Total value of tokens in SLP pool ({chainName}).</p>
                           <p>
                             This value may be higher on other websites due to the collateral of positions being included
                             in the calculation.
@@ -836,24 +836,24 @@ export default function DashboardV2() {
               tradePageVersion === 1 ? (
                 <>
                   <Trans>
-                    GMX is the utility and governance token. Accrues 30% and 27% of V1 and V2 markets generated fees,
+                    SD is the utility and governance token. Accrues 30% and 27% of V1 and V2 markets generated fees,
                     respectively.
                   </Trans>
                   <br />
                   <Trans>
-                    GLP is the liquidity provider token for GMX V1 markets. Accrues 70% of the V1 markets generated
+                    SLP is the liquidity provider token for SD V1 markets. Accrues 70% of the V1 markets generated
                     fees.
                   </Trans>
                 </>
               ) : (
                 <>
                   <Trans>
-                    GMX is the utility and governance token. Accrues 30% and 27% of V1 and V2 markets generated fees,
+                    SD is the utility and governance token. Accrues 30% and 27% of V1 and V2 markets generated fees,
                     respectively.
                   </Trans>
                   <br />
                   <Trans>
-                    GM is the liquidity provider token for GMX V2 markets. Accrues 63% of the V2 markets generated fees.
+                    GM is the liquidity provider token for SD markets. Accrues 63% of the V2 markets generated fees.
                   </Trans>
                 </>
               )
@@ -866,11 +866,11 @@ export default function DashboardV2() {
                   <div className="App-card-title">
                     <div className="App-card-title-mark">
                       <div className="App-card-title-mark-icon">
-                        <img src={currentIcons.gmx} width="40" alt="GMX Token Icon" />
+                        <img src={currentIcons.gmx} width="40" alt="SD Token Icon" />
                       </div>
                       <div className="App-card-title-mark-info">
-                        <div className="App-card-title-mark-title">GMX</div>
-                        <div className="App-card-title-mark-subtitle">GMX</div>
+                        <div className="App-card-title-mark-title">SD</div>
+                        <div className="App-card-title-mark-subtitle">SD</div>
                       </div>
                       <div>
                         <AssetDropdown assetSymbol="GMX" />
@@ -912,7 +912,7 @@ export default function DashboardV2() {
                       <div className="label">
                         <Trans>Supply</Trans>
                       </div>
-                      <div>{formatAmount(totalGmxSupply, GMX_DECIMALS, 0, true)} GMX</div>
+                      <div>{formatAmount(totalGmxSupply, GMX_DECIMALS, 0, true)} SD</div>
                     </div>
                     <div className="App-card-row">
                       <div className="label">
@@ -949,11 +949,11 @@ export default function DashboardV2() {
                     <div className="App-card-title">
                       <div className="App-card-title-mark">
                         <div className="App-card-title-mark-icon">
-                          <img src={currentIcons.glp} width="40" alt="GLP Icon" />
+                          <img src={currentIcons.glp} width="40" alt="SLP Icon" />
                         </div>
                         <div className="App-card-title-mark-info">
-                          <div className="App-card-title-mark-title">GLP</div>
-                          <div className="App-card-title-mark-subtitle">GLP</div>
+                          <div className="App-card-title-mark-title">SLP</div>
+                          <div className="App-card-title-mark-subtitle">SLP</div>
                         </div>
                         <div>
                           <AssetDropdown assetSymbol="GLP" />
@@ -972,7 +972,7 @@ export default function DashboardV2() {
                         <div className="label">
                           <Trans>Supply</Trans>
                         </div>
-                        <div>{formatAmount(glpSupply, GLP_DECIMALS, 0, true)} GLP</div>
+                        <div>{formatAmount(glpSupply, GLP_DECIMALS, 0, true)} SLP</div>
                       </div>
                       <div className="App-card-row">
                         <div className="label">
@@ -994,7 +994,7 @@ export default function DashboardV2() {
                       </div>
                     </div>
                   </div>
-                  <InteractivePieChart data={glpPool} label={t`GLP Pool`} />
+                  <InteractivePieChart data={glpPool} label={t`SLP Pool`} />
                 </div>
               )}
               {isV2 && <GMCard />}
@@ -1003,7 +1003,7 @@ export default function DashboardV2() {
               <>
                 <div className="token-table-wrapper App-card">
                   <div className="App-card-title">
-                    <Trans>GLP Index Composition</Trans>{" "}
+                    <Trans>SLP Index Composition</Trans>{" "}
                     <img src={currentIcons.network} width="16" alt="Network Icon" />
                   </div>
                   <div className="App-card-divider" />
@@ -1117,7 +1117,7 @@ export default function DashboardV2() {
                 </div>
 
                 <div className="glp-composition-small">
-                  <PageTitle title={t`GLP Index Composition`} />
+                  <PageTitle title={t`SLP Index Composition`} />
                 </div>
 
                 <div className="token-grid">

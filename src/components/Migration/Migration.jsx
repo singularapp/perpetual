@@ -256,7 +256,7 @@ function MigrationModal(props) {
             <div className="App-info-label">{token.bonus > 0 ? "Base Tokens" : "To Receive"}</div>
             <div className="align-right">
               {baseAmount !== undefined &&
-                `${formatAmount(baseAmount, 18, 4, true)} GMX ($${formatAmount(
+                `${formatAmount(baseAmount, 18, 4, true)} SD ($${formatAmount(
                   baseAmountUsd,
                   18 + decimals,
                   2,
@@ -272,7 +272,7 @@ function MigrationModal(props) {
               </div>
               <div className="align-right">
                 {bonusAmount !== undefined &&
-                  `${formatAmount(bonusAmount, 18, 4, true)} GMX ($${formatAmount(
+                  `${formatAmount(bonusAmount, 18, 4, true)} SD ($${formatAmount(
                     bonusAmountUsd,
                     18 + decimals,
                     2,
@@ -289,7 +289,7 @@ function MigrationModal(props) {
               </div>
               <div className="align-right">
                 {totalAmount !== undefined &&
-                  `${formatAmount(totalAmount, 18, 4, true)} GMX ($${formatAmount(
+                  `${formatAmount(totalAmount, 18, 4, true)} SD ($${formatAmount(
                     totalAmountUsd,
                     18 + decimals,
                     2,
@@ -404,7 +404,7 @@ export default function Migration() {
         </div>
       </div>
       <div className="Migration-note">
-        <Trans>Your wallet: {formatAmount(gmxBalance, 18, 4, true)}</Trans> GMX
+        <Trans>Your wallet: {formatAmount(gmxBalance, 18, 4, true)}</Trans> SD
       </div>
       <div className="Migration-cards">
         {tokens.map((token, index) => {

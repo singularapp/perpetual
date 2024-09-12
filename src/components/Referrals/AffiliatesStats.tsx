@@ -376,7 +376,7 @@ function AffiliatesStats({
         <div className="reward-history">
           <Card
             title={t`Rebates Distribution History`}
-            tooltipText={t`V1 Rebates and V1/V2 esGMX are airdropped weekly. V2 Rebates are claimed manually.`}
+            tooltipText={t`V1 Rebates and V1/V2 esSD are airdropped weekly. V2 Rebates are claimed manually.`}
             bodyPadding={false}
           >
             <div className="overflow-x-auto">
@@ -403,7 +403,7 @@ function AffiliatesStats({
 
                     if (rebate.typeId === RebateDistributionType.Rebate) {
                       if (rebate.tokens[0] === esGmxAddress) {
-                        rebateType = t`V1 esGMX`;
+                        rebateType = t`V1 esSD`;
                       } else {
                         rebateType = t`V1 Airdrop`;
                       }
