@@ -1158,7 +1158,7 @@ msgstr ""
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Skip"
-msgstr ""
+msgstr "スキップします"
 
 #: src/components/ToastifyDebug/ToastifyDebug.tsx
 msgid "Copied"
@@ -1557,7 +1557,7 @@ msgstr ""
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Swap: Exchange one cryptocurrency for another directly on SingularDEX. Use this feature to adjust your portfolio quickly in response to market changes or to prepare for a trading strategy."
-msgstr ""
+msgstr "スワップ：SingularDEXで直接仮想通貨を別の通貨に交換します。この機能を使って、市場の変化に迅速に対応したり、取引戦略の準備をしたりすることができます。"
 
 #: src/pages/BuyGMX/BuyGMX.tsx
 msgid "You can buy ETH directly on <0>Arbitrum</0> using these options:"
@@ -4179,7 +4179,7 @@ msgstr "キャンセルできませんでした"
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Last"
-msgstr ""
+msgstr "最後です"
 
 #: src/components/Synthetics/StatusNotification/OrderStatusNotification.tsx
 msgid "Fulfilling order request"
@@ -4774,7 +4774,7 @@ msgstr ""
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Set Leverage: Adjust the leverage level using the slider to control the size of your positions. Higher leverage amplifies potential profits and losses, so use caution and consider your risk tolerance before setting the leverage."
-msgstr ""
+msgstr "レバレッジを設定：スライダーを使用してレバレッジレベルを調整し、ポジションのサイズを管理します。高いレバレッジは潜在的な利益と損失を増幅するため、設定する前に慎重に行動し、リスク許容度を考慮してください。"
 
 #: src/components/Referrals/JoinReferralCode.jsx
 msgid "Referral code updated!"
@@ -4807,7 +4807,7 @@ msgstr "理由: {0}"
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Go Long: Open a long position if you predict the price of a cryptocurrency will rise. Choose your leverage, set the position size, and confirm the order. This allows you to potentially profit from price increases."
-msgstr ""
+msgstr "ロングポジション：仮想通貨の価格が上昇すると予想する場合は、ロングポジションを開きます。レバレッジを選択し、ポジションのサイズを設定して注文を確認します。これにより、価格上昇から利益を得る可能性があります。"
 
 #: src/components/Synthetics/GmList/GmTokensTotalBalanceInfo.tsx
 msgid "Wallet total accrued Fees"
@@ -5970,7 +5970,7 @@ msgstr ""
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Connect Wallet: Start by connecting your digital wallet to SingularDEX. Click 'Connect Wallet', choose your preferred wallet provider, and authorize the connection to enable transactions and fund management on the platform."
-msgstr ""
+msgstr "ウォレットを接続：まず、SingularDEXにデジタルウォレットを接続します。「ウォレットを接続」をクリックし、お好みのウォレットプロバイダーを選択して、プラットフォームでの取引と資金管理を有効にするために接続を許可してください。"
 
 #: src/components/Exchange/SwapBox.jsx
 msgid "Min order: 10 USD"
@@ -6245,7 +6245,7 @@ msgstr ""
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Back"
-msgstr ""
+msgstr "バック"
 
 #: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/LaunchPad/LaunchPad.tsx
@@ -7331,7 +7331,7 @@ msgstr "プール"
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Go Short: Open a short position if you believe the price of a cryptocurrency will fall. Set your leverage and position size accordingly. Short selling enables you to profit from price declines."
-msgstr ""
+msgstr "ショートポジション：仮想通貨の価格が下落すると予想する場合は、ショートポジションを開きます。レバレッジとポジションのサイズを適切に設定してください。ショートポジションでは、価格の下落から利益を得ることができます。"
 
 #: src/components/Synthetics/StatusNotification/GmStatusNotification.tsx
 msgid "<0>Buying {0}: <1>{indexName}</1>{1}</0> <2>with {tokensText}</2>"
@@ -8078,7 +8078,7 @@ msgstr "注文が執行され得る価格はチャートに表示された価格
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Fund Your Account: Ensure your wallet is sufficiently funded to cover initial margins and potential price movements. Proper funding is critical, especially when using leverage in trading."
-msgstr ""
+msgstr "アカウントに資金を入金：初期証拠金や潜在的な価格変動をカバーするために、ウォレットに十分な資金があることを確認してください。特にレバレッジを使用する場合には、適切な資金管理が重要です。"
 
 #: src/components/Synthetics/Claims/ClaimsHistory.tsx
 msgid "Claims History"

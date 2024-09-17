@@ -1158,7 +1158,7 @@ msgstr ""
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Skip"
-msgstr ""
+msgstr "跳过"
 
 #: src/components/ToastifyDebug/ToastifyDebug.tsx
 msgid "Copied"
@@ -1557,7 +1557,7 @@ msgstr ""
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Swap: Exchange one cryptocurrency for another directly on SingularDEX. Use this feature to adjust your portfolio quickly in response to market changes or to prepare for a trading strategy."
-msgstr ""
+msgstr "兑换：在SingularDEX上直接将一种加密货币兑换为另一种。使用此功能可以快速调整您的投资组合，以应对市场变化或为交易策略做好准备。"
 
 #: src/pages/BuyGMX/BuyGMX.tsx
 msgid "You can buy ETH directly on <0>Arbitrum</0> using these options:"
@@ -4179,7 +4179,7 @@ msgstr "取消失败"
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Last"
-msgstr ""
+msgstr "最终"
 
 #: src/components/Synthetics/StatusNotification/OrderStatusNotification.tsx
 msgid "Fulfilling order request"
@@ -4774,7 +4774,7 @@ msgstr ""
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Set Leverage: Adjust the leverage level using the slider to control the size of your positions. Higher leverage amplifies potential profits and losses, so use caution and consider your risk tolerance before setting the leverage."
-msgstr ""
+msgstr "设置杠杆：使用滑块调整杠杆水平，以控制您的仓位大小。较高的杠杆可以放大潜在的利润和损失，因此在设置杠杆之前，请谨慎行事并考虑您的风险承受能力。"
 
 #: src/components/Referrals/JoinReferralCode.jsx
 msgid "Referral code updated!"
@@ -4807,7 +4807,7 @@ msgstr "原因: {0}"
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Go Long: Open a long position if you predict the price of a cryptocurrency will rise. Choose your leverage, set the position size, and confirm the order. This allows you to potentially profit from price increases."
-msgstr ""
+msgstr "做多：如果您预测加密货币价格将上涨，请开立多头仓位。选择您的杠杆，设置仓位大小并确认订单。这样可以让您有机会从价格上涨中获利。"
 
 #: src/components/Synthetics/GmList/GmTokensTotalBalanceInfo.tsx
 msgid "Wallet total accrued Fees"
@@ -5970,7 +5970,7 @@ msgstr ""
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Connect Wallet: Start by connecting your digital wallet to SingularDEX. Click 'Connect Wallet', choose your preferred wallet provider, and authorize the connection to enable transactions and fund management on the platform."
-msgstr ""
+msgstr "连接钱包：首先，将您的数字钱包连接到SingularDEX。点击\"连接钱包\"，选择您偏好的钱包提供商，并授权连接，以便在平台上进行交易和资金管理。"
 
 #: src/components/Exchange/SwapBox.jsx
 msgid "Min order: 10 USD"
@@ -6245,7 +6245,7 @@ msgstr ""
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Back"
-msgstr ""
+msgstr "上一页"
 
 #: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/LaunchPad/LaunchPad.tsx
@@ -7331,7 +7331,7 @@ msgstr "池子"
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Go Short: Open a short position if you believe the price of a cryptocurrency will fall. Set your leverage and position size accordingly. Short selling enables you to profit from price declines."
-msgstr ""
+msgstr "做空：如果您认为加密货币价格将下跌，请开立空头仓位。相应地设置您的杠杆和仓位大小。卖空可以让您从价格下跌中获利。"
 
 #: src/components/Synthetics/StatusNotification/GmStatusNotification.tsx
 msgid "<0>Buying {0}: <1>{indexName}</1>{1}</0> <2>with {tokensText}</2>"
@@ -8078,7 +8078,7 @@ msgstr "订单可以执行的价格可能与图表价格略有不同，因为市
 
 #: src/components/Guide/PerpectualGuide.tsx
 msgid "Fund Your Account: Ensure your wallet is sufficiently funded to cover initial margins and potential price movements. Proper funding is critical, especially when using leverage in trading."
-msgstr ""
+msgstr "为您的账户注资：确保您的钱包有足够的资金来覆盖初始保证金和潜在的价格波动。特别是在交易中使用杠杆时，充足的资金至关重要。"
 
 #: src/components/Synthetics/Claims/ClaimsHistory.tsx
 msgid "Claims History"
